@@ -1,4 +1,7 @@
 # Confluent Platform - Sandbox
+![Docker Pulls](https://img.shields.io/docker/pulls/magicalpipelines/cp-sandbox.svg)
+![Docker Automated](https://img.shields.io/docker/automated/magicalpipelines/cp-sandbox.svg)
+![Docker Build](https://img.shields.io/docker/build/magicalpipelines/cp-sandbox.svg)
 
 Yes, I know running multiple processes in a single container is a Docker anti-pattern. However, this is very convenient for adhoc testing and sandboxing purposes.
 
