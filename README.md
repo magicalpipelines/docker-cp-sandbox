@@ -49,8 +49,6 @@ $ kafka-topics \
 # KSQL (ksqlDB coming soon)
 ```bash
 docker run --name sandbox \
-  -v "$(pwd)":/app \
-  -w /app/hello-streams \
   -ti magicalpipelines/cp-sandbox:5.3.0 \
   bash -c "confluent local start ksql-server; ksql"
 ```
