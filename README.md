@@ -28,7 +28,7 @@ $ cd your/repo
 $ docker run --name sandbox \
   -v "$(pwd)":/app \
   -w /app \
-  -ti magicalpipelines/cp-sandbox:5.3.0 \
+  -ti magicalpipelines/cp-sandbox:5.4.0 \
   bash -c "confluent local start kafka; bash"
 
 # wait for kafka and zookeeper to start
@@ -46,10 +46,10 @@ $ kafka-topics \
 ./gradlew run
 ```
 
-# KSQL (ksqlDB coming soon)
+# ksqlDB
 ```bash
 docker run --name sandbox \
-  -ti magicalpipelines/cp-sandbox:5.3.0 \
+  -ti magicalpipelines/cp-sandbox:5.4.0 \
   bash -c "confluent local start ksql-server; ksql"
 ```
 

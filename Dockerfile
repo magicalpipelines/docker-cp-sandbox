@@ -1,10 +1,10 @@
 FROM byrnedo/alpine-curl AS build-env
 
-ENV CONFLUENT_VERSION 5.3.0
+ENV CONFLUENT_VERSION 5.4.0
 ENV CONFLUENT_SCALA_VERSION 2.11
 
 # Install Confluent Platform
-ADD http://packages.confluent.io/archive/5.3/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
+ADD http://packages.confluent.io/archive/5.4/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
 RUN tar xf /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz -C /opt/ && rm /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz
 
 # Install Confluent Hub
