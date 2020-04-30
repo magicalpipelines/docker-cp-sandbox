@@ -1,10 +1,10 @@
 FROM byrnedo/alpine-curl AS build-env
 
-ENV CONFLUENT_VERSION 5.4.0
+ENV CONFLUENT_VERSION 5.5.0
 ENV CONFLUENT_SCALA_VERSION 2.11
 
 # Install Confluent Platform
-ADD http://packages.confluent.io/archive/5.4/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
+ADD http://packages.confluent.io/archive/5.5/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz /opt
 RUN tar xf /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz -C /opt/ && rm /opt/confluent-community-$CONFLUENT_VERSION-$CONFLUENT_SCALA_VERSION.tar.gz
 
 # Install Confluent Hub
@@ -28,7 +28,7 @@ COPY --from=build-env /opt /opt
 ENV PATH="/opt/confluent/bin/:/opt/confluent-hub/bin:${PATH}"
 
 # Install curl and kafkacat
-RUN apt-get update && apt-get --assume-yes install curl kafkacat
+RUN apt-get update && apt-get --assume-yes install curl jq kafkacat less
 
 CMD ["bash"]
 #ENTRYPOINT ["/docker-entrypoint.sh"]
